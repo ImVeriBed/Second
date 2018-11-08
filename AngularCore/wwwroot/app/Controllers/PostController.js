@@ -26,13 +26,13 @@ myApp.controller('PostController',
                     alert ('post failed')
                 })
 
-            $http.put('api/abonent/' + accountCD, data)
-                .then(function () {
-                    $route.reload();
+            //$http.put('api/abonent/' + accountCD, data)
+            //    .then(function () {
+            //        $route.reload();
 
-                }, function () {
-                    alert('put failed')
-                })
+            //    }, function () {
+            //        alert('put failed')
+            //    })
         }
 
     });
