@@ -1,0 +1,81 @@
+<div class="text-center">
+    <h2>Список абонентов</h2>
+</div>
+<table st-table="aboCollection" class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ФИО</th>
+            <th>Телефон</th>
+            <th>ID улицы</th>
+            <th>Номер дома</th>
+            <th>Номер квартиры</th>
+            <th>Действие</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="abo in abonent">
+            <td>{{abo.accountcd}}</td>
+            <td>{{abo.fio}}</td>
+            <td>{{abo.phone}}</td>
+            <td>{{abo.streetcd}}</td>
+            <td>{{abo.houseno}}</td>
+            <td>{{abo.flatno}}</td>
+            <td>
+                <button type="button" class="fa fa-pencil" ng-click="postdata(abo.accountcd, abo.fio, abo.phone, abo.streetcd, abo.houseno, abo.flatno)"></button>
+                <button type="button" class="fa fa-trash" href="" data-toggle="modal" data-target="#basicModal"></button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+<hr height:"130px">
+<div class="text-center">
+    <a href="" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#basicModal" id="add">
+        Добавить абонента
+    </a>
+</div>
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog" ng-controller="PostController">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Добавление абонента </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="2" class="form2">
+                    <div class="form-group">
+                        <label style="float:left">ID</label>
+                        <input class="form-control" ng-model="accountcd" />
+
+                        <label style="float:left">ФИО</label>
+                        <input class="form-control" ng-model="fio" />
+
+                        <label style="float:left">Телефон</label>
+                        <input class="form-control"  ng-model="phone"/>
+
+                        <label style="float:left">ID улицы</label>
+                        <input class="form-control" ng-model="streetcd"/>
+
+                        <label style="float:left">Номер дома</label>
+                        <input class="form-control" ng-model="houseno"/>
+
+                        <label style="float:left">Номер квартиры</label>
+                        <input class="form-control" ng-model="flatno"/>
+                    </div>
+                    <hr />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-dark"
+                        ng-click="postdata(accountcd, fio, phone, streetcd, houseno, flatno)" data-dismiss="modal">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

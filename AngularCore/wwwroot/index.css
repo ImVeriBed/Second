@@ -1,0 +1,17 @@
+﻿.form1 {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 120px;
+}
+.form2 {
+    width: 50%;
+    margin: 0 auto;
+}
+.btn {
+    width: 20%; 
+}
+
+.form-control{
+    /*width: 50%;*/
+}
+
