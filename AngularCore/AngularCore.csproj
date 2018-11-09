@@ -6,7 +6,10 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\app\application.js" />
+    <Content Remove="wwwroot\app\Controllers\AboCtrl.js" />
     <Content Remove="wwwroot\app\Controllers\AbonController.js" />
+    <Content Remove="wwwroot\app\Controllers\httpController.js" />
+    <Content Remove="wwwroot\app\Controllers\PostController.js" />
     <Content Remove="wwwroot\app\style.css" />
   </ItemGroup>
 
@@ -18,8 +21,6 @@
 
   <ItemGroup>
     <None Include="wwwroot\app\app.js" />
-    <None Include="wwwroot\app\Controllers\AboCtrl.js" />
-    <None Include="wwwroot\app\Controllers\httpController.js" />
     <None Include="wwwroot\app\Controllers\ServController.js" />
     <None Include="wwwroot\app\Services\GetService.js" />
     <None Include="wwwroot\app\Views\img\cabinet_head_bg.png" />
