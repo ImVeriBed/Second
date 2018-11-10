@@ -22,7 +22,7 @@
             <td>{{abo.houseno}}</td>
             <td>{{abo.flatno}}</td>
             <td>
-                <button href="" type="button" class="fa fa-pencil" data-toggle="modal" data-target="#basicModal" ng-click="getFlag(2, abo.accountcd, 
+                <button href="" type="button" class="fa fa-pencil" data-toggle="modal" data-target="#basicModal" ng-click="getFlag(2, abo.accountcd,
                         abo.fio, abo.phone, abo.streetcd, abo.houseno, abo.flatno)"></button>
                 <button type="button" class="fa fa-trash" ng-click="deleteData(abo.accountcd)"></button>
             </td>
@@ -55,16 +55,16 @@
                         <input class="form-control" ng-model="fio" />
 
                         <label style="float:left">Телефон</label>
-                        <input class="form-control"  ng-model="phone"/>
+                        <input class="form-control" ng-model="phone" />
 
                         <label style="float:left">ID улицы</label>
-                        <input class="form-control" ng-model="streetcd"/>
+                        <input class="form-control" ng-model="streetcd" />
 
                         <label style="float:left">Номер дома</label>
-                        <input class="form-control" ng-model="houseno"/>
+                        <input class="form-control" ng-model="houseno" />
 
                         <label style="float:left">Номер квартиры</label>
-                        <input class="form-control" ng-model="flatno"/>
+                        <input class="form-control" ng-model="flatno" />
                     </div>
                     <hr />
                 </form>
@@ -72,9 +72,18 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
                 <button type="button" class="btn btn-dark"
-                        ng-click="transferData(accountcd, fio, phone, streetcd, houseno, flatno)" data-dismiss="modal">Сохранить</button>
+                        ng-click="transferData(accountcd, fio, phone, streetcd, houseno, flatno)" data-dismiss="modal">
+                    Сохранить
+                </button>
             </div>
         </div>
+    </div>
+</div>
+<div style="margin-top: 55px">
+    <div class="text-right" style="margin: 10px">
+        <a href="/" class="btn btn-outline-dark" style="width:220px">
+            Вернуться назад
+        </a>
     </div>
 </div>
 
