@@ -4,7 +4,7 @@
 <table st-table="aboCollection" class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
+            <th>Счет</th>
             <th>ФИО</th>
             <th>Телефон</th>
             <th>ID улицы</th>
@@ -22,8 +22,9 @@
             <td>{{abo.houseno}}</td>
             <td>{{abo.flatno}}</td>
             <td>
-                <button type="button" class="fa fa-pencil" ng-click=""></button>
-                <button type="button" class="fa fa-trash" ng-click="deletedata(abo.accountcd)"></button>
+                <button href="" type="button" class="fa fa-pencil" data-toggle="modal" data-target="#basicModal" ng-click="getFlag(2, abo.accountcd, 
+                        abo.fio, abo.phone, abo.streetcd, abo.houseno, abo.flatno)"></button>
+                <button type="button" class="fa fa-trash" ng-click="deleteData(abo.accountcd)"></button>
             </td>
 
         </tr>
@@ -31,12 +32,12 @@
 </table>
 <hr height:"130px">
 <div class="text-center">
-    <a href="" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#basicModal" id="add">
+    <a href="" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#basicModal" id="add" ng-click="getFlag(1, null, null, null, null, null, null)">
         Добавить абонента
     </a>
 </div>
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-dialog" <!--ng-controller="PostController"-->>
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="myModalLabel">Добавление абонента </h5>
@@ -45,10 +46,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="2" class="form2">
+                <form class="form2">
                     <div class="form-group">
-                        <label style="float:left">ID</label>
-                        <input class="form-control" ng-model="accountcd" />
+                        <label style="float:left">Номер лицевого счета</label>
+                        <input id="accCD" class="form-control" ng-model="accountcd" />
 
                         <label style="float:left">ФИО</label>
                         <input class="form-control" ng-model="fio" />
@@ -71,7 +72,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
                 <button type="button" class="btn btn-dark"
-                        ng-click="postdata(accountcd, fio, phone, streetcd, houseno, flatno)" data-dismiss="modal">Сохранить</button>
+                        ng-click="transferData(accountcd, fio, phone, streetcd, houseno, flatno)" data-dismiss="modal">Сохранить</button>
             </div>
         </div>
     </div>
