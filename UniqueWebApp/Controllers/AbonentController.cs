@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AngularCore.Models;
+using UniqueWebApp.Models;
 
-namespace AngularCore.Controllers
+namespace UniqueWebApp.Controllers
 {
     [Route("api/[controller]")]
     public class AbonentController : Controller
@@ -17,7 +17,7 @@ namespace AngularCore.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody] Abonent ab)
+        public void Post(Abonent ab)
         {
             if (ab == null) return;
             var abonents = AbonentModels.GetData(); // Получить данные
@@ -29,14 +29,22 @@ namespace AngularCore.Controllers
         public void Delete(string accountCD)
         {
             var abonents = AbonentModels.GetData();
-            int ind = abonents.FindIndex(a => a.ACCOUNTCD == accountCD);
-            abonents.RemoveAt(ind); // Удалить абонента
+            if (accountCD != null && accountCD.ToLower() != "undefined")
+            {
+                abonents.Remove(abonents.FirstOrDefault(a => a.ACCOUNTCD == accountCD)); // Удалить абонента
+            }
+            else
+            {
+                abonents.Remove(abonents.FirstOrDefault(a => a == null));
+            }
+
             AbonentModels.PostData(abonents); // Сохранить данные в файл
         }
 
         [HttpPut("{accountCD}")] // изменить запись
         public void Put(string accountCD, [FromBody] Abonent ab)
         {
+            if (ab is null || string.IsNullOrWhiteSpace(accountCD)) return;
             var abonents = AbonentModels.GetData();
             int ind = abonents.FindIndex(a => a.ACCOUNTCD == accountCD);
             abonents[ind] = ab; // изменить абонента

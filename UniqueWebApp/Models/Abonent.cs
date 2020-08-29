@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
 
-namespace AngularCore.Models
+namespace UniqueWebApp.Models
 {
     [DataContract]
     public class Abonent
@@ -26,7 +26,7 @@ namespace AngularCore.Models
 
     public class AbonentModels
     {
-        public static string path = "..\\AngularCore\\wwwroot\\Abonents.json";
+        public static string path = "..\\UniqueWebApp\\wwwroot\\Abonents.json";
 
         public static void PostData(IEnumerable<Abonent> Ab)
         {
