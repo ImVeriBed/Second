@@ -17,7 +17,7 @@ namespace UniqueWebApp.Controllers
         }
 
         [HttpPost]
-        public void Post(Abonent ab)
+        public void Post([FromBody] Abonent ab)
         {
             if (ab == null) return;
             var abonents = AbonentModels.GetData(); // Получить данные

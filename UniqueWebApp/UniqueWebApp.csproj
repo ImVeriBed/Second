@@ -8,5 +8,9 @@
     <Folder Include="wwwroot\app\Views\img\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AngularJS.Intellisense" Version="1.0.3" />
+  </ItemGroup>
+
 
 </Project>
